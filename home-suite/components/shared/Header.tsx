@@ -6,37 +6,37 @@ import { SignedIn, UserButton, SignedOut, SignInButton } from "@clerk/nextjs";
 
 const Header = () => {
 	return (
-		<header className="w-full h-12 border-b bg-gradient-to-r from-gray-100 to-gray-300 px-8">
-			<div className="wrapper flex h-full w-full items-center">
+		<header className="w-full border-b bg-gradient-to-r from-gray-100 to-gray-300">
+			<div className="wrapper flex items-center justify-between">
 				{/* Logo Section (Left-Aligned) */}
-				<div className="flex items-center pt-5.5">
-					<Link href="/" className="w-32">
-						<Image
-							src="/assets/icons/logo.png"
-							width={90}
-							height={25}
-							alt="Home Suite logo"
-						/>
-					</Link>
-				</div>
+				<Link href="/" className="w-36">
+					<Image
+						src="/assets/icons/logo.png"
+						width={90}
+						height={25}
+						alt="Home Suite logo"
+					/>
+				</Link>
 
 				<SignedIn>
-					<nav className="flex justify-center w-full">
+					<nav className="md:flex-between hidden w-full max-w-xs">
 						<NavItems />
 					</nav>
 				</SignedIn>
 
 				{/* Login Button (Right-Aligned) */}
-				<div className="flex w-full justify-end gap-3">
+				<div className="flex w-32 justify-end gap-3">
 					<SignedIn>
-						<UserButton />
+						<UserButton afterSwitchSessionUrl="/" />
 					</SignedIn>
 					<SignedOut>
-						<SignInButton>
-							<Button className="rounded-full x-4 py-1 text-sm bg-blue-600 hover:bg-blue-700 transition-colors duration-200">
-								<Link href="/sign-in">Login</Link>
-							</Button>
-						</SignInButton>
+						<Button
+							asChild
+							className="rounded-full bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
+							size="lg"
+						>
+							<Link href="/sign-in">Login</Link>
+						</Button>
 					</SignedOut>
 				</div>
 			</div>

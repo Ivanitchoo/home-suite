@@ -6,7 +6,7 @@ import { FaBullhorn, FaMoneyBillAlt, FaEnvelope } from "react-icons/fa";
 
 export default function Home() {
 	return (
-		<>
+		<main>
 			{/** Esta é a secção do panfleto e as ecrituras iniciais */}
 			<section className="bg-primary-50 bg-contain py-5 md:py-10">
 				<div className="wrapper grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0">
@@ -22,7 +22,7 @@ export default function Home() {
 					</div>
 
 					<Image
-						src="/assets/hero/hero_1.png"
+						src="/assets/images/hero_1.png"
 						alt="hero"
 						width={1000}
 						height={1000}
@@ -83,6 +83,6 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-		</>
+		</main>
 	);
 }
